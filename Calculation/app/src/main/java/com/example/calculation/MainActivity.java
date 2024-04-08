@@ -18,9 +18,9 @@ enum OP { None, Add, Sub, Mul, Div}
 
 public class MainActivity extends AppCompatActivity {
 
-    private int theValue = 0;
-    private int operand1=0, operand2=0;
-    private OP op=OP.None;
+    private double theValue = 0.0; // 將變數類型改為double
+    private double operand1 = 0.0, operand2 = 0.0; // 將變數類型改為double
+    private OP op = OP.None;
     private State state = State.FirstNumberInput;
 
     @Override
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public void processKeyInput(View view){
         Button b= (Button )view;    // 取得發生事件的按鈕
         String bstr= b.getText().toString();   // 取得發生事件的按鈕上的文字
-        int bint; // 透過R.id.display取得顯示結果的EditText元件
+        double bint; // 新增變數來處理小數點
         EditText edt = (EditText) findViewById(R.id.display);
 
         switch(bstr) { // 依據發生事件的按鈕上的文字值，進行不同的處理
